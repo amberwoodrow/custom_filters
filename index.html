@@ -10,17 +10,25 @@
   <body>
 
     <div class="container">
-      <h1>CUSTOM FILTERS!!!</h1>
+      <h1>Custom Filters</h1>
       <div class="row">
-        <div class="col-md-5">
-          <label for="kebabMe">kebab-me</label>
+        <div class="col-md-4">
+          <h2>kebab-me</h2>
           <input type="text" class="form-control" ng-model="kebabMe" ng-init="kebabMe='me be kebabed'">
           <h3>{{kebabMe | kebabCase}}</h3>
         </div>
-        <div class="col-md-5">
-          <label for="camelMe">camelMe</label>
+        <div class="col-md-4">
+          <h2>camelMe</h2>
           <input type="text" class="form-control" ng-model="camelMe" ng-init="camelMe='me be cameled'">
           <h3>{{camelMe | camelCase}}</h3>
+        </div>
+        <div class="col-md-4"> 
+          <h2>REDACT a word</h2>
+          <label for="redactMeMessage">Message</label>
+          <input type="text" class="form-control" ng-model="redactMeMessage" ng-init="redactMeMessage='me be redacted'">
+          <label for="redactMe">Word to be redacted in message</label>
+          <input type="text" class="form-control" ng-model="redactMe" ng-init="redactMe='redacted'"> 
+          <h3>{{redactMeMessage | redact: redactMe}}</h3>
         </div>
       </div>
     </div>
